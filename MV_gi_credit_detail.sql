@@ -39,6 +39,7 @@ AS
   , MEMO_PLEDGE_PMT
   , MEMO_COUNT_PLEDGE
   , MEMO_PLEDGE_PAID_TOTAL
+  , THIRD_PARTY_PLEDGE_PAID_TOTAL
   , MEMO_PLEDGE_BALANCE
   , MEMO_NOT_COUNT_PLEDGE
   , MEMO_NOT_COUNT_PLEDGE_BALANCE
@@ -130,7 +131,8 @@ AS
    COMMENT ON COLUMN "PENTAHO"."C_GI_CREDIT_DETAIL"."MEMO_MG_PMT" IS 'Amount memod to a donor where the cash was a match from a company';
    COMMENT ON COLUMN "PENTAHO"."C_GI_CREDIT_DETAIL"."MEMO_PLEDGE_PMT" IS 'Amount memod to a donor where a pledge was recorded. <> MG memo';
    COMMENT ON COLUMN "PENTAHO"."C_GI_CREDIT_DETAIL"."MEMO_COUNT_PLEDGE" IS 'Amount memod to a donor for a pledge that is counted in advancement reported totals (exclude uncountable testamentary pledges)';
-   COMMENT ON COLUMN "PENTAHO"."C_GI_CREDIT_DETAIL"."MEMO_PLEDGE_PAID_TOTAL" IS 'Amount memod to donor paid to date on pledge';
+   COMMENT ON COLUMN "PENTAHO"."C_GI_CREDIT_DETAIL"."MEMO_PLEDGE_PAID_TOTAL" IS 'Total amount memo''d to donor paid to date on pledge';
+   COMMENT ON COLUMN "PENTAHO"."C_GI_CREDIT_DETAIL"."THIRD_PARTY_PLEDGE_PAID_TOTAL" IS 'Total amount of pledge paid by donor as a third party';
    COMMENT ON COLUMN "PENTAHO"."C_GI_CREDIT_DETAIL"."MEMO_PLEDGE_BALANCE" IS 'Current memod amount remaining on pledge (MEMO_COUNT_PLEDGE-MEMO_PLEDGE_PAID_TOTAL)';
    COMMENT ON COLUMN "PENTAHO"."C_GI_CREDIT_DETAIL"."MEMO_NOT_COUNT_PLEDGE" IS 'Amount memod to a donor for a pledge that is not counted in advancement reported totals (ie, uncountable testamentary pledges)';
    COMMENT ON COLUMN "PENTAHO"."C_GI_CREDIT_DETAIL"."THIRD_PARTY_PMT" IS 'Amount paid on a pledge by a 3rd party';
@@ -170,4 +172,3 @@ AS
    COMMENT ON COLUMN "PENTAHO"."C_GI_CREDIT_DETAIL"."THIRD_PARTY_FROM_ENTITY_CODE" IS 'ENTITY_CODE of payer of THIRD_PARTY_PMT';
    COMMENT ON COLUMN "PENTAHO"."C_GI_CREDIT_DETAIL"."THIRD_PARTY_FROM_NAME_SORT" IS 'NAME_SORT of payer of THIRD_PARTY_PMT';
    COMMENT ON MATERIALIZED VIEW "PENTAHO"."C_GI_CREDIT_DETAIL"  IS 'snapshot table for snapshot PENTAHO.C_GI_CREDIT_DETAIL';
-
